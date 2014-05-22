@@ -34,7 +34,7 @@ __version__ = '0.0.1'
 
 
 def xkcdDownloader(imgdir, imtype):
-    """PURPOSE: To download all XKCD comics (with alt-text) to the specified
+    """PURPOSE: To download all XKCD comics (with title-text) to the specified
         directory and in the specified format."""
 
     if imgdir is None:
@@ -80,23 +80,23 @@ def xkcdDownloader(imgdir, imtype):
             im = Image.open(file)
 
             #get the size of the old image so we know how much padding to
-            #add for the alt-text:
+            #add for the title-text:
             oldImSize = im.size
 
-            #break up the alt-text string:
+            #break up the title-text string:
             #each fixed-width character is 10 pixels. Figure out how
             #many characters can fit per line based on the width of the
             #comic image:
             imTextLength = int(oldImSize[0] / 10.)
 
-            #save the comic alt-text to string:
+            #save the comic title-text to string:
             altText = comic[0].find('img')['title']
 
-            #get the length of the alt-text string:
+            #get the length of the title-text string:
             altTextLen = len(altText)
 
             #now figure out how many lines you'll need below the image
-            #to fit all the alt-text:
+            #to fit all the title-text:
             numLines = int(altTextLen / imTextLength) + 1
 
             #create a new list to contain the broken up al-text into
