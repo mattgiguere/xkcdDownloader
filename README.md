@@ -1,7 +1,7 @@
 xkcdDownloader
 ==============
 
-Downloads each XKCD comic and their its respective alt-text (the hidden text that appears when you mouse over), 
+Downloads each XKCD comic and its respective title-text (the hidden text that appears when you mouse over the comic), 
 combines them into a single image and saves the combined images for all comics to a user-specified directory. 
 Dependencies include:
 
@@ -11,7 +11,7 @@ Dependencies include:
 
 ###Example 1
 
-To download all comics in PNG form into a subdirectory called xkcd_images, type the following at the command line:
+To download all comics in PNG form into a subdirectory within the current directory called xkcd_images, type the following at the command line:
 
 `python xkcdDownloader.py`
 
